@@ -1,0 +1,41 @@
+﻿using EFatura.Core.EntityBase;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EFatura.Core.RepositoryBase
+{
+    public interface IRepository<TEntity> where TEntity : class, IEntity, new()
+    {
+
+        TEntity Add(TEntity entity);
+
+        bool AddMore(IEnumerable<TEntity> listEntity);
+        
+        TEntity Get(Expression<Func<TEntity, bool>> filter = null);
+
+        IEnumerable<TEntity> GetAll();
+
+        bool Update(TEntity entity);
+
+        TEntity Delete(TEntity entity);
+
+
+        /*ASYNC METHODS*/
+
+        Task<TEntity> AddAsync(TEntity entity);
+
+        Task<bool> AddMoreAsync(IEnumerable<TEntity> listEntity);
+
+        Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null);
+
+        Task<IEnumerable<TEntity>> GetAllAsync();
+
+        Task<bool> UpdateAsync(TEntity entity);
+
+        Task<TEntity> DeleteAsync(TEntity entity);
+    }
+}
