@@ -86,7 +86,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityBase\BaseEntity.cs" />
     <Compile Include="EntityBase\IEntity.cs" />
+    <Compile Include="EnumBase\EnumsArea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase\EntityFramework\EFRepositoryBase.cs" />
     <Compile Include="RepositoryBase\IRepository.cs" />

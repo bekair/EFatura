@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Customer.cs" />
-    <Compile Include="Domain\Invoice.cs" />
-    <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\Address.cs" />
+    <Compile Include="Domain\County.cs" />
+    <Compile Include="Domain\Person.cs" />
+    <Compile Include="Domain\City.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +52,9 @@
       <Project>{86B6E53E-6800-4CDB-9C35-B0FA7B2B5C60}</Project>
       <Name>EFatura.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OtherEntities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,8 +13,8 @@ namespace EFatura.Core.RepositoryBase
 
         TEntity Add(TEntity entity);
 
-        bool AddMore(IEnumerable<TEntity> listEntity);
-        
+        bool AddMore(params TEntity[] entities/*IEnumerable<TEntity> listEntity*/);
+
         TEntity Get(Expression<Func<TEntity, bool>> filter = null);
 
         IEnumerable<TEntity> GetAll();
@@ -23,12 +23,14 @@ namespace EFatura.Core.RepositoryBase
 
         TEntity Delete(TEntity entity);
 
+        long GetMaxID();
+
 
         /*ASYNC METHODS*/
 
         Task<TEntity> AddAsync(TEntity entity);
 
-        Task<bool> AddMoreAsync(IEnumerable<TEntity> listEntity);
+        Task<bool> AddMoreAsync(params TEntity[] entities);
 
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null);
 
@@ -37,5 +39,7 @@ namespace EFatura.Core.RepositoryBase
         Task<bool> UpdateAsync(TEntity entity);
 
         Task<TEntity> DeleteAsync(TEntity entity);
+
+        Task<long> GetMaxIDAsync();
     }
 }

@@ -4,16 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EFatura.Core.RepositoryBase.EntityFramework
 {
-    public class EFRepositoryBase<TEntity, TContext> : IRepository<TEntity>
-        where TEntity : class, IEntity, new()
-        where TContext : DbContext, new()
+    public class EFRepositoryBase<TEntity, TContext> : IRepository<TEntity> where TEntity : BaseEntity, new() //class, IEntity
+                                                                            where TContext : DbContext, new()
     {
+
         private TContext _context;
+
 
         public EFRepositoryBase(TContext context)
         {
@@ -30,34 +30,30 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);//LOOK HERE
+                Console.WriteLine(ex.Message); //LOOK HERE
                 return null; //Unsuccesfull add, returns null
             }
 
             return entity; //If its succesfully added it will be the added entity
         }
 
-        public bool AddMore(IEnumerable<TEntity> listEntity)
+        public bool AddMore(params TEntity[] entities)
         {
             bool isAdded;
 
             try
             {
-                foreach (var entry in listEntity)
-                {
-                    _context.Entry(entry).State = EntityState.Added;
-                }
-
+                _context.Set<TEntity>().AddRange(entities);
                 _context.SaveChanges();
                 isAdded = true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                isAdded = false;//Unsuccesfull add, returns false
+                isAdded = false; //Unsuccesfull add, returns false
             }
 
-            return isAdded;//Entity List is successfully added, returns true 
+            return isAdded; //Entity List is successfully added, returns true 
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
@@ -82,7 +78,7 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);//LOOK HERE
+                Console.WriteLine(ex.Message); //LOOK HERE
                 isUpdated = false;
             }
 
@@ -102,8 +98,23 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 return null; //Unsuccessfull update, returns null
             }
 
-            return entity;//When the entity is successfully added
+            return entity; //When the entity is successfully added
         }
+
+        public long GetMaxID()
+        {
+            try
+            {
+                return _context.Set<TEntity>().Max(q => q.ID);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1L; //If there is no record, it will return -1
+            };
+        }
+
+
 
 
         /*--------- ASYNC METHOD IMPLEMENTATIONS ----------*/
@@ -118,22 +129,19 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return null;//Unsuccesfull add, returns null
+                return null; //Unsuccesfull add, returns null
             }
 
-            return entity;//Succesfully added, returns entity
+            return entity; //Succesfully added, returns entity
         }
 
-        public async Task<bool> AddMoreAsync(IEnumerable<TEntity> listEntity)
+        public async Task<bool> AddMoreAsync(params TEntity[] entities)
         {
             bool isAdded;
 
             try
             {
-                foreach (var entity in listEntity)
-                {
-                    _context.Entry(entity).State = EntityState.Added;
-                }
+                await _context.Set<TEntity>().AddRangeAsync(entities);
                 await _context.SaveChangesAsync();
 
                 isAdded = true;
@@ -144,7 +152,7 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 isAdded = false;
             }
 
-            return isAdded;//Unsuccessfull add returns false, successfull add returns true
+            return isAdded; //Unsuccessfull add returns false, successfull add returns true
         }
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null)
@@ -174,7 +182,7 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 isUpdated = false;
             }
 
-            return isUpdated;//returns true when the entity was successfully updated, otherwise returns false
+            return isUpdated; //returns true when the entity was successfully updated, otherwise returns false
         }
 
         public async Task<TEntity> DeleteAsync(TEntity entity)
@@ -190,8 +198,20 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 return null; //if the deletion was failed, the method is returned null
             }
 
-            return entity;//returns entity if the process is successfull
+            return entity; //returns entity if the process is successfull
         }
 
+        public async Task<long> GetMaxIDAsync()
+        {
+            try
+            {
+                return await _context.Set<TEntity>().MaxAsync(q => q.ID);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1L; //If there is no record, it will return -1
+            }
+        }
     }
 }

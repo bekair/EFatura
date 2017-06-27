@@ -123,13 +123,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\EntityFramework\EFaturaDbContext.cs" />
-    <Compile Include="Base\EntityFramework\CustomerDAO.cs" />
-    <Compile Include="Base\EntityFramework\InvoiceDAO.cs" />
-    <Compile Include="Base\IInvoiceDAO.cs" />
-    <Compile Include="Base\EntityFramework\ProductDAO.cs" />
-    <Compile Include="Base\ICustomerDAO.cs" />
-    <Compile Include="Base\IProductDAO.cs" />
+    <Compile Include="Base\EntityFramework\AddressDAO.cs" />
+    <Compile Include="Base\EntityFramework\CityDAO.cs" />
+    <Compile Include="Base\EntityFramework\CountyDAO.cs" />
+    <Compile Include="Base\ICountyDAO.cs" />
+    <Compile Include="Base\ICityDAO.cs" />
+    <Compile Include="DBContexts\EFaturaDbContext.cs" />
+    <Compile Include="Base\EntityFramework\PersonDAO.cs" />
+    <Compile Include="Base\IAddressDAO.cs" />
+    <Compile Include="Base\IPersonDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
