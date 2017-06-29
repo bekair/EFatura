@@ -33,8 +33,13 @@ namespace EFatura.Entities.Domain
         public int DoorNumber { get; set; }
 
         [Column("POSTAL_CODE")]
-        [DataType(DataType.PostalCode)]
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; }
+
+        [Column("COUNTRY_ID_FOREIGN")]
+        public long CountryID { get; set; }
+
+        //Navigation Property
+        public Country Country { get; set; }
 
         [Column("CITY_ID_FOREIGN")]
         public long CityID { get; set; }
@@ -47,6 +52,9 @@ namespace EFatura.Entities.Domain
 
         //Navigation Property
         public County County { get; set; }
+
+        [Column("DISTRICT")]
+        public string District { get; set; } //District => Semt
 
         //Navigation Property
         public IEnumerable<Person> People { get; set; }

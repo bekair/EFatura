@@ -1,4 +1,5 @@
-﻿using EFatura.Entities.Domain;
+﻿using System.Configuration;
+using EFatura.Entities.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace EFatura.DataAccess.Base.DBContexts
@@ -8,11 +9,13 @@ namespace EFatura.DataAccess.Base.DBContexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source='BEKAIR'; Initial Catalog='EFatura'; Integrated Security=SSPI;");
+            optionsBuilder.UseSqlServer("Data Source = 'BEKIRCAN\\SQLEXPRESS'; Initial Catalog = 'EFatura'; Integrated Security=SSPI;");
+                                      /*"Data Source='BEKAIR'; Initial Catalog='EFatura'; Integrated Security=SSPI;"*/
         }
 
         public DbSet<Person> People { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<County> Counties { get; set; }
     }

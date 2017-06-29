@@ -15,6 +15,12 @@ namespace EFatura.Entities.Domain
         public string CityName { get; set; }
 
         //Navigation Property
-        public IEnumerable<County> Counties { get; set; } //virtual => Lazy Loading
+        public IEnumerable<County> Counties { get; set; }
+
+        [Column("COUNTRY_ID_FOREIGN")]
+        public long CountryID { get; set; }
+
+        //Navigation Property
+        public Country Country { get; set; }
     }
 }

@@ -125,7 +125,9 @@
   <ItemGroup>
     <Compile Include="Base\EntityFramework\AddressDAO.cs" />
     <Compile Include="Base\EntityFramework\CityDAO.cs" />
+    <Compile Include="Base\EntityFramework\CountryDAO.cs" />
     <Compile Include="Base\EntityFramework\CountyDAO.cs" />
+    <Compile Include="Base\ICountryDAO.cs" />
     <Compile Include="Base\ICountyDAO.cs" />
     <Compile Include="Base\ICityDAO.cs" />
     <Compile Include="DBContexts\EFaturaDbContext.cs" />
