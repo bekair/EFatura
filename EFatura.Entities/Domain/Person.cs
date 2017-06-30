@@ -52,5 +52,11 @@ namespace EFatura.Entities.Domain
         [StringLength(100)]
         public string Email { get; set; }
 
+        [Column("COMPANY_ID_FOREIGN")]
+        public long CompanyID { get; set; }
+
+        //Navigation Property
+        public Company Company { get; set; }
+
     }
 }
