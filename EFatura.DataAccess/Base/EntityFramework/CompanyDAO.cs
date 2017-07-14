@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace EFatura.DataAccess.Base.EntityFramework
 {
-    public abstract class CountryDAO : EFRepositoryBase<Country, EFaturaDbContext>, ICountryDAO
+    public abstract class CompanyDAO : EFRepositoryBase<Company, EFaturaDbContext>, ICompanyDAO
     {
-        public CountryDAO(EFaturaDbContext context) 
+        public CompanyDAO(EFaturaDbContext context) 
             : base(context)
         {
         }

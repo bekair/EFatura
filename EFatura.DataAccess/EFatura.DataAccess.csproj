@@ -125,8 +125,10 @@
   <ItemGroup>
     <Compile Include="Base\EntityFramework\AddressDAO.cs" />
     <Compile Include="Base\EntityFramework\CityDAO.cs" />
+    <Compile Include="Base\EntityFramework\CompanyDAO.cs" />
     <Compile Include="Base\EntityFramework\CountryDAO.cs" />
     <Compile Include="Base\EntityFramework\CountyDAO.cs" />
+    <Compile Include="Base\ICompanyDAO.cs" />
     <Compile Include="Base\ICountryDAO.cs" />
     <Compile Include="Base\ICountyDAO.cs" />
     <Compile Include="Base\ICityDAO.cs" />
@@ -134,6 +136,17 @@
     <Compile Include="Base\EntityFramework\PersonDAO.cs" />
     <Compile Include="Base\IAddressDAO.cs" />
     <Compile Include="Base\IPersonDAO.cs" />
+    <Compile Include="EntityAccessors\CountryManager.cs" />
+    <Compile Include="EntityAccessors\PersonManager.cs" />
+    <Compile Include="EntityAccessors\CountyManager.cs" />
+    <Compile Include="EntityAccessors\CompanyManager.cs" />
+    <Compile Include="EntityAccessors\CityManager.cs" />
+    <Compile Include="EntityAccessors\AddressManager.cs" />
+    <Compile Include="Migrations\20170714122403_init.cs" />
+    <Compile Include="Migrations\20170714122403_init.designer.cs">
+      <DependentUpon>20170714122403_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\EFaturaDbContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

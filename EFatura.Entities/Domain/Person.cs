@@ -52,11 +52,23 @@ namespace EFatura.Entities.Domain
         [StringLength(100)]
         public string Email { get; set; }
 
+        [Column("IS_WORKING")]
+        public bool isWorking { get; set; }
+
         [Column("COMPANY_ID_FOREIGN")]
         public long CompanyID { get; set; }
 
         //Navigation Property
         public Company Company { get; set; }
+
+        [Column("TAX_IDENTIFICATION_NO")]
+        [Required]
+        [StringLength(11)]
+        public string TaxIdentificationNo { get; set; } //TaxIdentificationNo => Vergi Kimlik Numarası (VKN)
+
+        [Column("WEB_SITE")]
+        [MaxLength(100)]
+        public string WebSite { get; set; }
 
     }
 }

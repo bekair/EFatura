@@ -55,5 +55,10 @@ namespace EFatura.Entities.Domain
         [Required]
         [StringLength(20)]
         public string FaxNumber { get; set; }
+
+        [Column("WEB_SITE")]
+        [MaxLength(100)]
+        public string WebSite { get; set; }
+
     }
 }
