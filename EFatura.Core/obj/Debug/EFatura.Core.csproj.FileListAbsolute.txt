@@ -61,3 +61,4 @@ C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatur
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Core\obj\Debug\EFatura.Core.dll
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Core\obj\Debug\EFatura.Core.pdb
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Core\obj\Debug\EFatura.Core.csprojResolveAssemblyReference.cache

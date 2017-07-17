@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EFatura.Core.EnumBase
+﻿namespace EFatura.Core.EnumBase
 {
     public class EnumsArea
     {
+
         public enum Gender
         {
             Male = 1, //1
@@ -101,11 +96,8 @@ namespace EFatura.Core.EnumBase
             Karabük,       //78
             Kilis,         //79
             Osmaniye,      //80
-            Düzce,         //81 
+            Düzce,         //81
         }
-
-
-
 
     }
 }

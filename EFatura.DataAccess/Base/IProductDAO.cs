@@ -3,7 +3,7 @@ using EFatura.Entities.Domain;
 
 namespace EFatura.DataAccess.Base
 {
-    public interface ICompanyDAO : IRepository<Company>
+    public interface IProductDAO : IRepository<Product>
     {
     }
 }

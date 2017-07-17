@@ -18,5 +18,7 @@ namespace EFatura.DataAccess.Base.DBContexts
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<County> Counties { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

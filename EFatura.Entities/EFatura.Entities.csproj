@@ -42,11 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Address.cs" />
+    <Compile Include="Domain\Category.cs" />
     <Compile Include="Domain\Company.cs" />
     <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\County.cs" />
     <Compile Include="Domain\Person.cs" />
     <Compile Include="Domain\City.cs" />
+    <Compile Include="Domain\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -53,12 +53,15 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 isAdded = false; //Unsuccesfull add, returns false
             }
 
-            return isAdded; //Entity List is successfully added, returns true 
+            return isAdded; //If Entity List is successfully added, returns true 
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
         {
-            return _context.Set<TEntity>().SingleOrDefault(filter);
+            if (filter != null)
+                return _context.Set<TEntity>().SingleOrDefault(filter);
+            else
+                return null;
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -157,7 +160,10 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null)
         {
-            return await _context.Set<TEntity>().SingleOrDefaultAsync(filter);
+            if (filter != null)
+                return await _context.Set<TEntity>().SingleOrDefaultAsync(filter);
+            else
+                return null;
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()

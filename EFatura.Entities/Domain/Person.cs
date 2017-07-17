@@ -9,9 +9,10 @@ namespace EFatura.Entities.Domain
     [Table("PEOPLE")]
     public class Person : BaseEntity
     {
-        [Column("PERSON_ID_NUMBER")]
         //TCKNAttribute YAZ!!
+        [Column("PERSON_ID_NUMBER")]
         [MaxLength(11)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public override long ID { get => base.ID; set => base.ID = value; }
 
         [Column("NAME")]
@@ -51,15 +52,6 @@ namespace EFatura.Entities.Domain
         [Required]
         [StringLength(100)]
         public string Email { get; set; }
-
-        [Column("IS_WORKING")]
-        public bool isWorking { get; set; }
-
-        [Column("COMPANY_ID_FOREIGN")]
-        public long CompanyID { get; set; }
-
-        //Navigation Property
-        public Company Company { get; set; }
 
         [Column("TAX_IDENTIFICATION_NO")]
         [Required]
