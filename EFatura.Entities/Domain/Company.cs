@@ -56,5 +56,7 @@ namespace EFatura.Entities.Domain
         [MaxLength(100)]
         public string WebSite { get; set; }
 
+        //Navigation Property
+        public IEnumerable<Person> Employees { get; set; }
     }
 }

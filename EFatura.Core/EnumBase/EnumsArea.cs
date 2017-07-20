@@ -11,7 +11,7 @@
 
         public enum Countries
         {
-            Turkey, //1
+            Turkey = 1, //1
         }
 
         public enum CitiesOfTurkey
@@ -97,6 +97,12 @@
             Kilis,         //79
             Osmaniye,      //80
             Düzce,         //81
+        }
+
+        public enum WorkingStatus
+        {
+            NotWorking, //0
+            Working     //1
         }
 
     }

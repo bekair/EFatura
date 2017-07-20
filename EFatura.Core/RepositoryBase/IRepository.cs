@@ -15,7 +15,9 @@ namespace EFatura.Core.RepositoryBase
 
         bool AddMore(params TEntity[] entities/*IEnumerable<TEntity> listEntity*/);
 
-        TEntity Get(Expression<Func<TEntity, bool>> filter = null);
+        TEntity GetSingle(Expression<Func<TEntity, bool>> filter = null);
+
+        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null);
 
         IEnumerable<TEntity> GetAll();
 
@@ -32,7 +34,9 @@ namespace EFatura.Core.RepositoryBase
 
         Task<bool> AddMoreAsync(params TEntity[] entities);
 
-        Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null);
+        Task<TEntity> GetSingleAsync(Expression<Func<TEntity, bool>> filter = null);
+
+        Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null);
 
         Task<IEnumerable<TEntity>> GetAllAsync();
 

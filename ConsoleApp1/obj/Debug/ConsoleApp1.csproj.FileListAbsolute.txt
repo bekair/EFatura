@@ -26,7 +26,6 @@ C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\Consol
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
-C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\bin\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\bin\Debug\System.Collections.Immutable.dll
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\bin\Debug\Microsoft.Extensions.Caching.Memory.dll

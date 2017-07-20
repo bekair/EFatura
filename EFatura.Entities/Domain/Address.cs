@@ -54,6 +54,7 @@ namespace EFatura.Entities.Domain
         public County County { get; set; }
 
         [Column("DISTRICT")]
+        //[Required]
         public string District { get; set; } //District => Semt
 
         //Navigation Property

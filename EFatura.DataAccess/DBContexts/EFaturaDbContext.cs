@@ -10,7 +10,7 @@ namespace EFatura.DataAccess.Base.DBContexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source = 'BEKIRCAN\\SQLEXPRESS'; Initial Catalog = 'EFatura'; Integrated Security=SSPI;");
-                                      /*"Data Source='BEKAIR'; Initial Catalog='EFatura'; Integrated Security=SSPI;"*/
+            /*"Data Source='BEKAIR'; Initial Catalog='EFatura'; Integrated Security=SSPI;"*/
         }
 
         public DbSet<Person> People { get; set; }
@@ -20,5 +20,6 @@ namespace EFatura.DataAccess.Base.DBContexts
         public DbSet<County> Counties { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Company> Companies { get; set; }
     }
 }

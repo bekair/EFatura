@@ -148,11 +148,6 @@
     <Compile Include="EntityAccessors\CityManager.cs" />
     <Compile Include="EntityAccessors\AddressManager.cs" />
     <Compile Include="EntityAccessors\ProductManager.cs" />
-    <Compile Include="Migrations\20170717134843_init.cs" />
-    <Compile Include="Migrations\20170717134843_init.designer.cs">
-      <DependentUpon>20170717134843_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\EFaturaDbContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

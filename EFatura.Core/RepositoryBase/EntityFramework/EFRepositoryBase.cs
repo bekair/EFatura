@@ -56,10 +56,18 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             return isAdded; //If Entity List is successfully added, returns true 
         }
 
-        public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
+        public TEntity GetSingle(Expression<Func<TEntity, bool>> filter = null)
         {
             if (filter != null)
                 return _context.Set<TEntity>().SingleOrDefault(filter);
+            else
+                return null;
+        }
+
+        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null)
+        {
+            if (filter != null)
+                return _context.Set<TEntity>().Where(filter).ToList();
             else
                 return null;
         }
@@ -158,10 +166,18 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             return isAdded; //Unsuccessfull add returns false, successfull add returns true
         }
 
-        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter = null)
+        public async Task<TEntity> GetSingleAsync(Expression<Func<TEntity, bool>> filter = null)
         {
             if (filter != null)
                 return await _context.Set<TEntity>().SingleOrDefaultAsync(filter);
+            else
+                return null;
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null)
+        {
+            if (filter != null)
+                return await _context.Set<TEntity>().Where(filter).ToListAsync();
             else
                 return null;
         }

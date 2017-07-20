@@ -31,7 +31,7 @@ namespace EFatura.Entities.Domain
 
         [Column("DISCOUNT_RATE")]
         [Required]
-        public int DiscountRate { get; set; } = 0;
+        public int DiscountRate { get; set; } = 0; //Default 'No Discount'
 
         [Column("DESCRIPTION")]
         public string Description { get; set; }

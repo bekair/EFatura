@@ -62,5 +62,15 @@ namespace EFatura.Entities.Domain
         [MaxLength(100)]
         public string WebSite { get; set; }
 
+        [Column("IS_WORKING")]
+        [Required]
+        public WorkingStatus IsWorking { get; set; }
+
+        [Column("COMPANY_ID_FOREIGN")]
+        public long CompanyID { get; set; }
+
+        //Navigation Property
+        public Company Company { get; set; }
+
     }
 }
