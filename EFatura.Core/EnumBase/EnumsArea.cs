@@ -105,5 +105,11 @@
             Working     //1
         }
 
+        public enum CustomerType
+        {
+            Inividual = 1,
+            Company
+        }
+
     }
 }

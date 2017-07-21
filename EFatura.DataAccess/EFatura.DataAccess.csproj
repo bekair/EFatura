@@ -137,16 +137,16 @@
     <Compile Include="Base\ICityDAO.cs" />
     <Compile Include="Base\IProductDAO.cs" />
     <Compile Include="DBContexts\EFaturaDbContext.cs" />
-    <Compile Include="Base\EntityFramework\PersonDAO.cs" />
+    <Compile Include="Base\EntityFramework\IndividualDAO.cs" />
     <Compile Include="Base\IAddressDAO.cs" />
-    <Compile Include="Base\IPersonDAO.cs" />
+    <Compile Include="Base\IIndividualDAO.cs" />
     <Compile Include="EntityAccessors\CategoryManager.cs" />
     <Compile Include="EntityAccessors\CountryManager.cs" />
-    <Compile Include="EntityAccessors\PersonManager.cs" />
     <Compile Include="EntityAccessors\CountyManager.cs" />
     <Compile Include="EntityAccessors\CompanyManager.cs" />
     <Compile Include="EntityAccessors\CityManager.cs" />
     <Compile Include="EntityAccessors\AddressManager.cs" />
+    <Compile Include="EntityAccessors\IndividualManager.cs" />
     <Compile Include="EntityAccessors\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

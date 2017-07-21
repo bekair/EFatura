@@ -1,12 +1,14 @@
-﻿using EFatura.Core.EntityBase;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using EFatura.Core.EnumBase;
+using static EFatura.Core.EnumBase.EnumsArea;
+using EFatura.Entities.OtherEntities;
 
 namespace EFatura.Entities.Domain
 {
     [Table("COMPANIES")]
-    public class Company : BaseEntity
+    public class Company : Customer
     {
         [Column("COMPANY_ID")]
         public override long ID { get => base.ID; set => base.ID = value; }
@@ -57,6 +59,12 @@ namespace EFatura.Entities.Domain
         public string WebSite { get; set; }
 
         //Navigation Property
-        public IEnumerable<Person> Employees { get; set; }
+        public IEnumerable<Individual> Employees { get; set; }
+
+        //Always will be 'Company'
+        [Column("CUSTOMER_TYPE")]
+        [Required]
+        public override CustomerType CustomerType { get => base.CustomerType;
+                                                    set => base.CustomerType = CustomerType.Company; } 
     }
 }

@@ -1,4 +1,4 @@
-﻿using EFatura.Core.EntityBase;
+﻿using EFatura.Entities.OtherEntities;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,11 +6,11 @@ using static EFatura.Core.EnumBase.EnumsArea;
 
 namespace EFatura.Entities.Domain
 {
-    [Table("PEOPLE")]
-    public class Person : BaseEntity
+    [Table("INDIVIDUALS")]
+    public class Individual : Customer
     {
         //TCKNAttribute YAZ!!
-        [Column("PERSON_ID_NUMBER")]
+        [Column("INDIVIDUAL_ID_NUMBER")]
         [MaxLength(11)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public override long ID { get => base.ID; set => base.ID = value; }
@@ -67,10 +67,17 @@ namespace EFatura.Entities.Domain
         public WorkingStatus IsWorking { get; set; }
 
         [Column("COMPANY_ID_FOREIGN")]
+        [Required(AllowEmptyStrings = true)]
         public long CompanyID { get; set; }
 
         //Navigation Property
         public Company Company { get; set; }
+
+        //Always will be 'Company'
+        [Column("CUSTOMER_TYPE")]
+        [Required]
+        public override CustomerType CustomerType { get => base.CustomerType;
+                                                    set => base.CustomerType = CustomerType.Inividual; }
 
     }
 }

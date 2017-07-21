@@ -22,7 +22,7 @@ namespace ConsoleApp1
             EFaturaDbContext _db = new EFaturaDbContext();
 
             ICountryDAO countryDao = new CountryManager(_db);
-            IPersonDAO personDao = new PersonManager(_db);
+            IIndividualDAO personDao = new IndividualManager(_db);
             ICompanyDAO companyDao = new CompanyManager(_db);
             ICategoryDAO categoryDao = new CategoryManager(_db);
             IProductDAO productDao = new ProductManager(_db);

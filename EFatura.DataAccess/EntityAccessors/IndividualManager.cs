@@ -3,9 +3,9 @@ using EFatura.DataAccess.Base.DBContexts;
 
 namespace EFatura.DataAccess.EntityAccessors
 {
-    public class PersonManager : PersonDAO
+    public class IndividualManager : IndividualDAO
     {
-        public PersonManager(EFaturaDbContext context) 
+        public IndividualManager(EFaturaDbContext context) 
             : base(context)
         {
         }

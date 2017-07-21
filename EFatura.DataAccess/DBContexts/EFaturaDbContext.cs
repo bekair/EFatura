@@ -13,13 +13,15 @@ namespace EFatura.DataAccess.Base.DBContexts
             /*"Data Source='BEKAIR'; Initial Catalog='EFatura'; Integrated Security=SSPI;"*/
         }
 
-        public DbSet<Person> People { get; set; }
+        public DbSet<Individual> Individuals { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<County> Counties { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public DbSet<Company> Companies { get; set; }
     }
 }

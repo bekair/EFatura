@@ -58,7 +58,7 @@ namespace EFatura.Entities.Domain
         public string District { get; set; } //District => Semt
 
         //Navigation Property
-        public IEnumerable<Person> People { get; set; }
+        public IEnumerable<Individual> People { get; set; }
 
     }
 }
