@@ -4,7 +4,7 @@ using EFatura.Entities.Domain;
 
 namespace EFatura.DataAccess.Base.EntityFramework
 {
-    public class ProductDAO : EFRepositoryBase<Product, EFaturaDbContext>, IProductDAO
+    public abstract class ProductDAO : EFRepositoryBase<Product, EFaturaDbContext>, IProductDAO
     {
         public ProductDAO(EFaturaDbContext context) 
             : base(context)

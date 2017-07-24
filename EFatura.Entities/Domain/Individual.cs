@@ -42,21 +42,10 @@ namespace EFatura.Entities.Domain
         [MaxLength(20)]
         public string JobPhone { get; set; }
 
-        [Column("ADDRESS_ID_FOREIGN")]
-        public long AddressID { get; set; }
-
-        //Navigation Property
-        public Address Address { get; set; }
-
         [Column("EMAIL")]
         [Required]
         [StringLength(100)]
         public string Email { get; set; }
-
-        [Column("TAX_IDENTIFICATION_NO")]
-        [Required]
-        [StringLength(11)]
-        public string TaxIdentificationNo { get; set; } //TaxIdentificationNo => Vergi Kimlik Numarası (VKN)
 
         [Column("WEB_SITE")]
         [MaxLength(100)]
@@ -67,17 +56,15 @@ namespace EFatura.Entities.Domain
         public WorkingStatus IsWorking { get; set; }
 
         [Column("COMPANY_ID_FOREIGN")]
-        [Required(AllowEmptyStrings = true)]
-        public long CompanyID { get; set; }
+        public long CompanyID { get; set; } //NOT REQUIRED 'Foreign Key'
 
         //Navigation Property
         public Company Company { get; set; }
 
-        //Always will be 'Company'
+        //Always will be 'Individual'
         [Column("CUSTOMER_TYPE")]
         [Required]
         public override CustomerType CustomerType { get => base.CustomerType;
                                                     set => base.CustomerType = CustomerType.Inividual; }
-
     }
 }

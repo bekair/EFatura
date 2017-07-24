@@ -1,11 +1,6 @@
 ﻿using EFatura.Core.EntityBase;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFatura.Entities.Domain
 {
@@ -15,11 +10,20 @@ namespace EFatura.Entities.Domain
         [Column("ORDER_ID")]
         public override long ID { get => base.ID; set => base.ID = value; }
 
-        [Column("ORDER_PRODUCT_ID_FOREIGN")]
-        public long OrderProductID { get; set; }
+        [Column("INDIVIDUAL_ID_FOREIGN")]
+        public long IndividualID { get; set; }
 
         //Navigation Property
-        public List<OrderProduct> OrderDetails { get; set; }
+        public Individual Individual { get; set; }
+
+        [Column("COMPANY_ID_FOREIGN")]
+        public long CompanyID { get; set; }
+
+        //Navigation Property
+        public Company Company { get; set; }
+
+        //Navigation Property
+        IEnumerable<Order> Orders { get; set; } 
 
     }
 }

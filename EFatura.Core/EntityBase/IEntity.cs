@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EFatura.Core.EntityBase
+﻿namespace EFatura.Core.EntityBase
 {
     public interface IEntity
     {

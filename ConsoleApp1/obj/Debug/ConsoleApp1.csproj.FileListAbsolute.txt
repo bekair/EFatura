@@ -26,3 +26,31 @@ C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\Consol
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\EFatura.Core.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\EFatura.DataAccess.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\EFatura.Entities.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\System.Interactive.Async.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Remotion.Linq.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\EFatura.Core.pdb
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\EFatura.DataAccess.pdb
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\EFatura.Entities.pdb
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\System.Interactive.Async.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Remotion.Linq.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Beko\Source\Repos\EFatura\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

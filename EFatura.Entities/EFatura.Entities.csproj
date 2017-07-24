@@ -49,7 +49,7 @@
     <Compile Include="OtherEntities\Customer.cs" />
     <Compile Include="Domain\Individual.cs" />
     <Compile Include="Domain\Order.cs" />
-    <Compile Include="Domain\OrderProduct.cs" />
+    <Compile Include="Domain\OrderDetail.cs" />
     <Compile Include="Domain\City.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
