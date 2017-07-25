@@ -64,13 +64,6 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 return null;
         }
 
-        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null)
-        {
-            if (filter != null)
-                return _context.Set<TEntity>().Where(filter).ToList();
-            else
-                return null;
-        }
 
         public IEnumerable<TEntity> GetAll()
         {
@@ -112,7 +105,7 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             return entity; //When the entity is successfully added
         }
 
-        public long GetMaxID()
+        public long? GetMaxID()
         {
             try
             {
@@ -174,14 +167,6 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
                 return null;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null)
-        {
-            if (filter != null)
-                return await _context.Set<TEntity>().Where(filter).ToListAsync();
-            else
-                return null;
-        }
-
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _context.Set<TEntity>().ToListAsync();
@@ -223,7 +208,7 @@ namespace EFatura.Core.RepositoryBase.EntityFramework
             return entity; //returns entity if the process is successfull
         }
 
-        public async Task<long> GetMaxIDAsync()
+        public async Task<long?> GetMaxIDAsync()
         {
             try
             {

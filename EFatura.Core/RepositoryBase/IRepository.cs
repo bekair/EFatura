@@ -17,15 +17,13 @@ namespace EFatura.Core.RepositoryBase
 
         TEntity GetSingle(Expression<Func<TEntity, bool>> filter = null);
 
-        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null);
-
         IEnumerable<TEntity> GetAll();
 
         bool Update(TEntity entity);
 
         TEntity Delete(TEntity entity);
 
-        long GetMaxID();
+        long? GetMaxID();
 
 
         /*ASYNC METHODS*/
@@ -36,14 +34,12 @@ namespace EFatura.Core.RepositoryBase
 
         Task<TEntity> GetSingleAsync(Expression<Func<TEntity, bool>> filter = null);
 
-        Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null);
-
         Task<IEnumerable<TEntity>> GetAllAsync();
 
         Task<bool> UpdateAsync(TEntity entity);
 
         Task<TEntity> DeleteAsync(TEntity entity);
 
-        Task<long> GetMaxIDAsync();
+        Task<long?> GetMaxIDAsync();
     }
 }

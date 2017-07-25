@@ -10,7 +10,7 @@ namespace EFatura.Entities.Domain
     {
         [Column("COUNTRY_ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("COUNTRY_NAME")]
         [Required]

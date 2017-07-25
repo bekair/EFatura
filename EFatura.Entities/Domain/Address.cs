@@ -9,7 +9,7 @@ namespace EFatura.Entities.Domain
     public class Address : BaseEntity
     {
         [Column("ADDRESS_ID")]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("NEIGHBOURHOOD")]
         [Required]
@@ -36,19 +36,19 @@ namespace EFatura.Entities.Domain
         public string PostalCode { get; set; }
 
         [Column("COUNTRY_ID_FOREIGN")]
-        public long CountryID { get; set; }
+        public long? CountryID { get; set; }
 
         //Navigation Property
         public Country Country { get; set; }
 
         [Column("CITY_ID_FOREIGN")]
-        public long CityID { get; set; }
+        public long? CityID { get; set; }
 
         //Navigation Property
         public City City { get; set; }
 
         [Column("COUNTY_ID_FOREIGN")]
-        public long CountyID { get; set; }
+        public long? CountyID { get; set; }
 
         //Navigation Property
         public County County { get; set; }

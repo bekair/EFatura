@@ -11,11 +11,11 @@ namespace EFatura.Entities.Domain
     {
         [Column("CATEGORY_ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("TOP_CATEGORY")]//TOP_CATEGORY_ID
         [Required]
-        public long TopCategoryID { get; set; } = 0; //Default is '0' = top category.
+        public long? TopCategoryID { get; set; } = 0; //Default is '0' = top category.
 
         [Column("CATEGORY_NAME")]
         [Required]

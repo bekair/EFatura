@@ -9,7 +9,7 @@ namespace EFatura.Entities.Domain
     {
         [Column("CITY_ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("CITY_NAME")]
         public string CityName { get; set; }
@@ -18,7 +18,7 @@ namespace EFatura.Entities.Domain
         public IEnumerable<County> Counties { get; set; }
 
         [Column("COUNTRY_ID_FOREIGN")]
-        public long CountryID { get; set; }
+        public long? CountryID { get; set; }
 
         //Navigation Property
         public Country Country { get; set; }

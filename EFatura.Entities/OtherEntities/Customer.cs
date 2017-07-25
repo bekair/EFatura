@@ -8,10 +8,10 @@ namespace EFatura.Entities.OtherEntities
 {
     public abstract class Customer : BaseEntity
     {
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("ADDRESS_ID_FOREIGN")]
-        public long AddressID { get; set; }
+        public long? AddressID { get; set; }
 
         //Navigation Property
         public Address Address { get; set; }

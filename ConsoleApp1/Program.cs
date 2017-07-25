@@ -10,7 +10,6 @@ using EFatura.DataAccess.Base.EntityFramework;
 using EFatura.DataAccess.Base;
 using EFatura.DataAccess.EntityAccessors;
 using static EFatura.Core.EnumBase.EnumsArea;
-using EFatura.Core.EnumBase;
 using Microsoft.EntityFrameworkCore;
 
 namespace ConsoleApp1
@@ -22,53 +21,41 @@ namespace ConsoleApp1
             EFaturaDbContext _db = new EFaturaDbContext();
 
             ICountryDAO countryDao = new CountryManager(_db);
-            IIndividualDAO personDao = new IndividualManager(_db);
+            IIndividualDAO individualDao = new IndividualManager(_db);
             ICompanyDAO companyDao = new CompanyManager(_db);
             ICategoryDAO categoryDao = new CategoryManager(_db);
             IProductDAO productDao = new ProductManager(_db);
             ICityDAO cityDao = new CityManager(_db);
+            IOrderDAO orderDao = new OrderManager(_db);
+            IOrderDetailDAO orderDetailDao = new OrderDetailManager(_db);
+            IAddressDAO addressDao = new AddressManager(_db);
 
-            Company comp = new Company()
-            {
-                MernisNo = "12345678910",
-                PhoneNumber = "03124426891",
-                TaxIdentificationNo = "111333222444",
-                TaxOffice = "Baskent",
-                TradeRegisterNo = "23456789123",
-                FaxNumber = "03122223456",
-                CompanyName = "Trust A.S",
-                Address = new Address()
-                {
-                    BuildingName = "Burgan",
-                    BuildingNumber = 50,
-                    Neighbourhood = "Aziz",
-                    DoorNumber = 20,
-                    CityID = (long)CitiesOfTurkey.Adana,
-                    CountryID = (long)Countries.Turkey,
-                    CountyID = 945
-                },
-                WebSite = "test@example.com"
-            };
-            companyDao.AddAsync(comp);
+            //Address address1 = new Address()
+            //{
+            //    BuildingName = "Burgan",
+            //    BuildingNumber = 50,
+            //    Neighbourhood = "Aziz",
+            //    DoorNumber = 20,
+            //    CityID = (long?)CitiesOfTurkey.Adana,
+            //    CountryID = (long?)Countries.Turkey,
+            //    CountyID = 945
+            //};
+            //addressDao.Add(address1);
 
-            //Product prod = new Product()
+            //Company comp = new Company()
             //{
-            //    ProductName = "L koltuk",
-            //    CategoryID = 1,
-            //    UnitPrice = 10.1,
-            //    KdvRate = 10,
-            //    StockAmount = 10
+            //    MernisNo = "12345678910",
+            //    Address = address1,
+            //    PhoneNumber = "03124426891",
+            //    TaxIdentificationNo = "111333222444",
+            //    TaxOffice = "Baskent",
+            //    TradeRegisterNo = "23456789123",
+            //    FaxNumber = "03122223456",
+            //    CompanyName = "Trust A.S",
+            //    WebSite = "test@example.com"
             //};
-            //Product prod1 = new Product()
-            //{
-            //    ProductName = "2. koltuk",
-            //    CategoryID = 1,
-            //    UnitPrice = 8.2,
-            //    KdvRate = 18,
-            //    StockAmount = 22,
-            //    DiscountRate = 5
-            //};
-            //productDao.AddMoreAsync(prod, prod1);
+            //companyDao.Add(comp);
+
 
             //Category c = new Category()
             //{
@@ -106,9 +93,31 @@ namespace ConsoleApp1
             //    CategoryName = "Tablet",
             //    TopCategoryID = 4
             //};
-
             //categoryDao.AddMore(c, c1, c2, c3, c4, c5);
-            //Person me = new Person
+
+
+            //Product prod1 = new Product()
+            //{
+            //    ProductName = "L koltuk",
+            //    CategoryID = 1,
+            //    UnitPrice = 10.1,
+            //    KdvRate = 10,
+            //    StockAmount = 10
+            //};
+            //Product prod2 = new Product()
+            //{
+            //    ProductName = "2. koltuk",
+            //    CategoryID = 1,
+            //    UnitPrice = 8.2,
+            //    KdvRate = 18,
+            //    StockAmount = 22,
+            //    DiscountRate = 5
+            //};
+            //productDao.AddMore(prod1, prod2);
+
+
+
+            //Individual individual1 = new Individual
             //{
             //    AddressID = 1,
             //    MobilePhone = "5554344444",
@@ -117,15 +126,112 @@ namespace ConsoleApp1
             //    Email = "can.baykal@example.com",
             //    Gender = Gender.Male,
             //    DateOfBirth = new DateTime(1992, 06, 05),
-            //    TaxIdentificationNo = "5556789108"
+            //    TaxIdentificationNo = "5556789108",
+            //    IsWorking = WorkingStatus.Working,
+            //    CompanyID = 1
             //};
 
-            //personDao.Add(me);
-            //Person alınan = personDao.Get(q => q.ID == 1);
-            IEnumerable<Category> alinan = _db.Categories.Where(q => q.ID == 1).Include(cat=>cat.Products);
-            Company company1 = companyDao.GetSingle(q => q.CompanyName == "Trust A.S");
+            //Individual individual2 = new Individual
+            //{
+            //    AddressID = 1,
+            //    MobilePhone = "5300009876",
+            //    Name = "Hande",
+            //    Surname = "Türk",
+            //    Email = "hande.turk@example.com",
+            //    Gender = Gender.Female,
+            //    DateOfBirth = new DateTime(1992, 06, 05),
+            //    TaxIdentificationNo = "2234959167",
+            //    IsWorking = WorkingStatus.NotWorking,
+            //};
+            //individualDao.AddMore(individual1,individual2);
 
-            int a = 0;
+            //Order order1 = new Order
+            //{
+            //    IndividualID = 1
+            //};
+
+            //Order order2 = new Order
+            //{
+            //    IndividualID = 1
+            //};
+
+            //Order order3 = new Order
+            //{
+            //    CompanyID = 1
+            //};
+            //orderDao.AddMore(order1, order2, order3);
+
+            //OrderDetail orderDetail1 = new OrderDetail()
+            //{
+            //    OrderID = 1,
+            //    ProductID = 1,
+            //    Quantity = 2,
+            //    UnitPrice = 10.1,
+            //    TotalPrice = 20.2
+            //};
+
+            //OrderDetail orderDetail2 = new OrderDetail()
+            //{
+            //    OrderID = 1,
+            //    ProductID = 2,
+            //    Quantity = 3,
+            //    UnitPrice = 8.2,
+            //    TotalPrice = 24.6
+            //};
+
+            //OrderDetail orderDetail3 = new OrderDetail()
+            //{
+            //    OrderID = 2,
+            //    ProductID = 1,
+            //    Quantity = 1,
+            //    UnitPrice = 10.1,
+            //    TotalPrice = 10.1
+            //};
+
+            //OrderDetail orderDetail4 = new OrderDetail()
+            //{
+            //    OrderID = 2,
+            //    ProductID = 2,
+            //    Quantity = 5,
+            //    UnitPrice = 8.2,
+            //    TotalPrice = 41
+            //};
+
+            //OrderDetail orderDetail5 = new OrderDetail()
+            //{
+            //    OrderID = 3,
+            //    ProductID = 1,
+            //    Quantity = 2,
+            //    UnitPrice = 10.1,
+            //    TotalPrice = 20.2
+            //};
+
+            //OrderDetail orderDetail6 = new OrderDetail()
+            //{
+            //    OrderID = 3,
+            //    ProductID = 2,
+            //    Quantity = 3,
+            //    UnitPrice = 8.2,
+            //    TotalPrice = 24.6
+            //};
+            //orderDetailDao.AddMore(orderDetail1, orderDetail2, orderDetail3,
+            //                       orderDetail4, orderDetail5, orderDetail6);
+
+            Individual individualAlinan = individualDao.GetSingle(q => q.ID == 1);
+            Company companyAlinan = companyDao.GetSingle(q => q.ID == 1);
+            Category categoryAlinan = _db.Categories.Include(cat => cat.Products).FirstOrDefault(q => q.ID == 1);
+            Order orderIndAlinan1 = _db.Orders.Include(o => o.Individual)
+                                              .Include(d=>d.OrderDetails)
+                                              .FirstOrDefault(o => o.ID == 1);
+
+            Order orderIndAlinan2 = _db.Orders.Include(o => o.Individual)
+                                              .Include(d => d.OrderDetails)
+                                              .FirstOrDefault(o => o.ID == 2);
+
+            Order orderCompAlinan1 = _db.Orders.Include(o => o.Company)
+                                               .Include(d => d.OrderDetails)
+                                               .FirstOrDefault(o => o.ID == 3);
+
 
             Console.ReadLine();
         }

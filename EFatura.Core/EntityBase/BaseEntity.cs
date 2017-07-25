@@ -5,6 +5,6 @@ namespace EFatura.Core.EntityBase
     public abstract class BaseEntity : IEntity
     {
         [Key]
-        public virtual long ID { get; set; }
+        public virtual long? ID { get; set; }
     }
 }

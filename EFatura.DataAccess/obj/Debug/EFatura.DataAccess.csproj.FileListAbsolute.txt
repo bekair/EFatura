@@ -118,3 +118,4 @@ C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatur
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.DataAccess\obj\Debug\EFatura.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.DataAccess\obj\Debug\EFatura.DataAccess.dll
 C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.DataAccess\obj\Debug\EFatura.DataAccess.pdb
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.DataAccess\bin\Debug\EFatura.DataAccess.dll.config

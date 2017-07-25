@@ -19,7 +19,7 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Address", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ADDRESS_ID");
 
@@ -32,13 +32,13 @@ namespace EFatura.DataAccess.Migrations
                     b.Property<int>("BuildingNumber")
                         .HasColumnName("BUILDING_NUMBER");
 
-                    b.Property<long>("CityID")
+                    b.Property<long?>("CityID")
                         .HasColumnName("CITY_ID_FOREIGN");
 
-                    b.Property<long>("CountryID")
+                    b.Property<long?>("CountryID")
                         .HasColumnName("COUNTRY_ID_FOREIGN");
 
-                    b.Property<long>("CountyID")
+                    b.Property<long?>("CountyID")
                         .HasColumnName("COUNTY_ID_FOREIGN");
 
                     b.Property<string>("District")
@@ -70,7 +70,7 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Category", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .HasColumnName("CATEGORY_ID");
 
                     b.Property<string>("CategoryName")
@@ -78,7 +78,8 @@ namespace EFatura.DataAccess.Migrations
                         .HasColumnName("CATEGORY_NAME")
                         .HasMaxLength(50);
 
-                    b.Property<long>("TopCategoryID")
+                    b.Property<long?>("TopCategoryID")
+                        .IsRequired()
                         .HasColumnName("TOP_CATEGORY");
 
                     b.HasKey("ID");
@@ -88,13 +89,13 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.City", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .HasColumnName("CITY_ID");
 
                     b.Property<string>("CityName")
                         .HasColumnName("CITY_NAME");
 
-                    b.Property<long>("CountryID")
+                    b.Property<long?>("CountryID")
                         .HasColumnName("COUNTRY_ID_FOREIGN");
 
                     b.HasKey("ID");
@@ -106,11 +107,11 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Company", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("COMPANY_ID");
 
-                    b.Property<long>("AddressID")
+                    b.Property<long?>("AddressID")
                         .HasColumnName("ADDRESS_ID_FOREIGN");
 
                     b.Property<string>("CompanyName")
@@ -164,7 +165,7 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Country", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .HasColumnName("COUNTRY_ID");
 
                     b.Property<string>("CountryName")
@@ -178,10 +179,10 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.County", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .HasColumnName("COUNTY_ID");
 
-                    b.Property<long>("CityID")
+                    b.Property<long?>("CityID")
                         .HasColumnName("CITY_ID_FOREIGN");
 
                     b.Property<string>("CountyName")
@@ -197,14 +198,15 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Individual", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnName("INDIVIDUAL_ID_NUMBER")
                         .HasMaxLength(11);
 
-                    b.Property<long>("AddressID")
+                    b.Property<long?>("AddressID")
                         .HasColumnName("ADDRESS_ID_FOREIGN");
 
-                    b.Property<long>("CompanyID")
+                    b.Property<long?>("CompanyID")
                         .HasColumnName("COMPANY_ID_FOREIGN");
 
                     b.Property<int>("CustomerType")
@@ -263,14 +265,14 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Order", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ORDER_ID");
 
-                    b.Property<long>("CompanyID")
+                    b.Property<long?>("CompanyID")
                         .HasColumnName("COMPANY_ID_FOREIGN");
 
-                    b.Property<long>("IndividualID")
+                    b.Property<long?>("IndividualID")
                         .HasColumnName("INDIVIDUAL_ID_FOREIGN");
 
                     b.HasKey("ID");
@@ -284,14 +286,14 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.OrderDetail", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("ORDER_PRODUCT_ID");
+                        .HasColumnName("ORDER_DETAIL_ID");
 
-                    b.Property<long>("OrderID")
+                    b.Property<long?>("OrderID")
                         .HasColumnName("ORDER_ID_FOREIGN");
 
-                    b.Property<long>("ProductID")
+                    b.Property<long?>("ProductID")
                         .HasColumnName("PRODUCT_ID_FOREIGN");
 
                     b.Property<int>("Quantity")
@@ -314,11 +316,11 @@ namespace EFatura.DataAccess.Migrations
 
             modelBuilder.Entity("EFatura.Entities.Domain.Product", b =>
                 {
-                    b.Property<long>("ID")
+                    b.Property<long?>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("PRODUCT_ID");
 
-                    b.Property<long>("CategoryID")
+                    b.Property<long?>("CategoryID")
                         .HasColumnName("CATEGORY_ID_FOREIGN");
 
                     b.Property<string>("Description")
@@ -352,89 +354,76 @@ namespace EFatura.DataAccess.Migrations
                 {
                     b.HasOne("EFatura.Entities.Domain.City", "City")
                         .WithMany()
-                        .HasForeignKey("CityID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CityID");
 
                     b.HasOne("EFatura.Entities.Domain.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CountryID");
 
                     b.HasOne("EFatura.Entities.Domain.County", "County")
                         .WithMany()
-                        .HasForeignKey("CountyID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CountyID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.City", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.Country", "Country")
                         .WithMany("Cities")
-                        .HasForeignKey("CountryID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CountryID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.Company", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.Address", "Address")
                         .WithMany()
-                        .HasForeignKey("AddressID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AddressID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.County", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.City", "City")
                         .WithMany("Counties")
-                        .HasForeignKey("CityID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CityID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.Individual", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.Address", "Address")
                         .WithMany("People")
-                        .HasForeignKey("AddressID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AddressID");
 
                     b.HasOne("EFatura.Entities.Domain.Company", "Company")
                         .WithMany("Employees")
-                        .HasForeignKey("CompanyID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CompanyID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.Order", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.Company", "Company")
                         .WithMany()
-                        .HasForeignKey("CompanyID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CompanyID");
 
                     b.HasOne("EFatura.Entities.Domain.Individual", "Individual")
                         .WithMany()
-                        .HasForeignKey("IndividualID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("IndividualID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.OrderDetail", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.Order", "Order")
                         .WithMany()
-                        .HasForeignKey("OrderID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OrderID");
 
                     b.HasOne("EFatura.Entities.Domain.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ProductID");
                 });
 
             modelBuilder.Entity("EFatura.Entities.Domain.Product", b =>
                 {
                     b.HasOne("EFatura.Entities.Domain.Category", "ProductCategory")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CategoryID");
                 });
         }
     }

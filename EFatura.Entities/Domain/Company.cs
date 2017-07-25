@@ -10,7 +10,7 @@ namespace EFatura.Entities.Domain
     public class Company : Customer
     {
         [Column("COMPANY_ID")]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("COMPANY_NAME")]
         [Required]

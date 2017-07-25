@@ -8,7 +8,7 @@ namespace EFatura.Entities.Domain
     public class Product : BaseEntity
     {
         [Column("PRODUCT_ID")]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("PRODUCT_NAME")]
         [Required]
@@ -16,7 +16,7 @@ namespace EFatura.Entities.Domain
         public string ProductName { get; set; }
 
         [Column("CATEGORY_ID_FOREIGN")]
-        public long CategoryID { get; set; }
+        public long? CategoryID { get; set; }
 
         //Navigation Property
         public Category ProductCategory { get; set; }

@@ -12,8 +12,7 @@ namespace EFatura.Entities.Domain
         //TCKNAttribute YAZ!!
         [Column("INDIVIDUAL_ID_NUMBER")]
         [MaxLength(11)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("NAME")]
         [Required]
@@ -56,7 +55,7 @@ namespace EFatura.Entities.Domain
         public WorkingStatus IsWorking { get; set; }
 
         [Column("COMPANY_ID_FOREIGN")]
-        public long CompanyID { get; set; } //NOT REQUIRED 'Foreign Key'
+        public long? CompanyID { get; set; } //NOT REQUIRED 'Foreign Key'
 
         //Navigation Property
         public Company Company { get; set; }

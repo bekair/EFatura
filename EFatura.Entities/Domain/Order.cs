@@ -8,22 +8,22 @@ namespace EFatura.Entities.Domain
     public class Order : BaseEntity
     {
         [Column("ORDER_ID")]
-        public override long ID { get => base.ID; set => base.ID = value; }
+        public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("INDIVIDUAL_ID_FOREIGN")]
-        public long IndividualID { get; set; }
+        public long? IndividualID { get; set; }
 
         //Navigation Property
         public Individual Individual { get; set; }
 
         [Column("COMPANY_ID_FOREIGN")]
-        public long CompanyID { get; set; }
+        public long? CompanyID { get; set; }
 
         //Navigation Property
         public Company Company { get; set; }
 
         //Navigation Property
-        IEnumerable<Order> Orders { get; set; } 
+        public IEnumerable<OrderDetail> OrderDetails { get; set; } 
 
     }
 }
