@@ -16,6 +16,7 @@ namespace EFatura.Entities.Domain
         public string ProductName { get; set; }
 
         [Column("CATEGORY_ID_FOREIGN")]
+        [Required]
         public long? CategoryID { get; set; }
 
         //Navigation Property

@@ -1,5 +1,6 @@
 ﻿using EFatura.Core.EntityBase;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFatura.Entities.Domain
@@ -18,6 +19,7 @@ namespace EFatura.Entities.Domain
         public IEnumerable<County> Counties { get; set; }
 
         [Column("COUNTRY_ID_FOREIGN")]
+        [Required]
         public long? CountryID { get; set; }
 
         //Navigation Property

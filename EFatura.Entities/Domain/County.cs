@@ -16,6 +16,7 @@ namespace EFatura.Entities.Domain
         public string CountyName { get; set; } //County:İlçe
 
         [Column("CITY_ID_FOREIGN")]
+        [Required]
         public long? CityID { get; set; }
 
         //Navigation Property

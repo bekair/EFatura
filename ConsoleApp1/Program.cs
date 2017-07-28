@@ -221,7 +221,7 @@ namespace ConsoleApp1
             Company companyAlinan = companyDao.GetSingle(q => q.ID == 1);
             Category categoryAlinan = _db.Categories.Include(cat => cat.Products).FirstOrDefault(q => q.ID == 1);
             Order orderIndAlinan1 = _db.Orders.Include(o => o.Individual)
-                                              .Include(d=>d.OrderDetails)
+                                              .Include(d => d.OrderDetails)
                                               .FirstOrDefault(o => o.ID == 1);
 
             Order orderIndAlinan2 = _db.Orders.Include(o => o.Individual)
@@ -231,6 +231,10 @@ namespace ConsoleApp1
             Order orderCompAlinan1 = _db.Orders.Include(o => o.Company)
                                                .Include(d => d.OrderDetails)
                                                .FirstOrDefault(o => o.ID == 3);
+
+            //ID = 2 olan birinin top category'sini getirmek
+            Category topCateg = _db.Categories.FirstOrDefault(q => q.ID == 
+                                               (_db.Categories.FirstOrDefault(a => a.ID == 2).TopCategoryID));
 
 
             Console.ReadLine();

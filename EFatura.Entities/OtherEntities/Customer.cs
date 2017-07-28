@@ -11,6 +11,7 @@ namespace EFatura.Entities.OtherEntities
         public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("ADDRESS_ID_FOREIGN")]
+        [Required]
         public long? AddressID { get; set; }
 
         //Navigation Property

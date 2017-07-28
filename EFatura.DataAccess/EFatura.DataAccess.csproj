@@ -127,16 +127,20 @@
     <Compile Include="Base\EntityFramework\CategoryDAO.cs" />
     <Compile Include="Base\EntityFramework\CityDAO.cs" />
     <Compile Include="Base\EntityFramework\CompanyDAO.cs" />
+    <Compile Include="Base\EntityFramework\CorporateBillDAO.cs" />
     <Compile Include="Base\EntityFramework\CountryDAO.cs" />
     <Compile Include="Base\EntityFramework\CountyDAO.cs" />
+    <Compile Include="Base\EntityFramework\IndividualBillDAO.cs" />
     <Compile Include="Base\EntityFramework\OrderDAO.cs" />
     <Compile Include="Base\EntityFramework\OrderDetailDAO.cs" />
     <Compile Include="Base\EntityFramework\ProductDAO.cs" />
     <Compile Include="Base\ICategoryDAO.cs" />
     <Compile Include="Base\ICompanyDAO.cs" />
+    <Compile Include="Base\ICorporateBillDAO.cs" />
     <Compile Include="Base\ICountryDAO.cs" />
     <Compile Include="Base\ICountyDAO.cs" />
     <Compile Include="Base\ICityDAO.cs" />
+    <Compile Include="Base\IIndividualBillDAO.cs" />
     <Compile Include="Base\IOrderDAO.cs" />
     <Compile Include="Base\IOrderDetailDAO.cs" />
     <Compile Include="Base\IProductDAO.cs" />
@@ -145,20 +149,17 @@
     <Compile Include="Base\IAddressDAO.cs" />
     <Compile Include="Base\IIndividualDAO.cs" />
     <Compile Include="EntityAccessors\CategoryManager.cs" />
+    <Compile Include="EntityAccessors\CorporateBillManager.cs" />
     <Compile Include="EntityAccessors\CountryManager.cs" />
     <Compile Include="EntityAccessors\CountyManager.cs" />
     <Compile Include="EntityAccessors\CompanyManager.cs" />
     <Compile Include="EntityAccessors\CityManager.cs" />
     <Compile Include="EntityAccessors\AddressManager.cs" />
+    <Compile Include="EntityAccessors\IndividualBillManager.cs" />
     <Compile Include="EntityAccessors\IndividualManager.cs" />
     <Compile Include="EntityAccessors\OrderManager.cs" />
     <Compile Include="EntityAccessors\OrderDetailManager.cs" />
     <Compile Include="EntityAccessors\ProductManager.cs" />
-    <Compile Include="Migrations\20170725115016_init.cs" />
-    <Compile Include="Migrations\20170725115016_init.designer.cs">
-      <DependentUpon>20170725115016_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\EFaturaDbContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -23,7 +23,7 @@ namespace EFatura.Entities.Domain
         public Company Company { get; set; }
 
         //Navigation Property
-        public IEnumerable<OrderDetail> OrderDetails { get; set; } 
+        public IEnumerable<OrderDetail> OrderDetails { get; set; }
 
     }
 }

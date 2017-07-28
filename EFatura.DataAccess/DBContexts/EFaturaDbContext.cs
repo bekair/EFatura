@@ -24,5 +24,7 @@ namespace EFatura.DataAccess.Base.DBContexts
         public DbSet<Order> Orders { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Individual> Individuals { get; set; }
+        public DbSet<CorporateBill> CorporateBills { get; set; }
+        public DbSet<IndividualBill> IndividualBills { get; set; }
     }
 }

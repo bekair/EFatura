@@ -1,5 +1,4 @@
 ﻿using EFatura.Core.EntityBase;
-using EFatura.Entities.OtherEntities;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,12 +11,14 @@ namespace EFatura.Entities.Domain
         public override long? ID { get => base.ID; set => base.ID = value; }
 
         [Column("PRODUCT_ID_FOREIGN")]
+        [Required]
         public long? ProductID { get; set; }
 
         //Navigation Property
         public Product Product { get; set; }
 
         [Column("ORDER_ID_FOREIGN")]
+        [Required]
         public long? OrderID { get; set; }
 
         //Navigation Property

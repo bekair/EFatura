@@ -44,8 +44,11 @@
     <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\Category.cs" />
     <Compile Include="Domain\Company.cs" />
+    <Compile Include="Domain\CorporateBill.cs" />
     <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\County.cs" />
+    <Compile Include="Domain\IndividualBill.cs" />
+    <Compile Include="OtherEntities\Bill.cs" />
     <Compile Include="OtherEntities\Customer.cs" />
     <Compile Include="Domain\Individual.cs" />
     <Compile Include="Domain\Order.cs" />

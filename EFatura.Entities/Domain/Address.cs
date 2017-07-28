@@ -42,12 +42,14 @@ namespace EFatura.Entities.Domain
         public Country Country { get; set; }
 
         [Column("CITY_ID_FOREIGN")]
+        [Required]
         public long? CityID { get; set; }
 
         //Navigation Property
         public City City { get; set; }
 
         [Column("COUNTY_ID_FOREIGN")]
+        [Required]
         public long? CountyID { get; set; }
 
         //Navigation Property
