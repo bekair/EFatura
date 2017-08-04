@@ -1,11 +1,5 @@
-﻿using EFatura.Core.EntityBase;
-using EFatura.Entities.OtherEntities;
-using System;
-using System.Collections.Generic;
+﻿using EFatura.Entities.OtherEntities;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFatura.Entities.Domain
 {

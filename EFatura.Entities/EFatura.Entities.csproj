@@ -48,8 +48,8 @@
     <Compile Include="Domain\Country.cs" />
     <Compile Include="Domain\County.cs" />
     <Compile Include="Domain\IndividualBill.cs" />
-    <Compile Include="OtherEntities\Bill.cs" />
-    <Compile Include="OtherEntities\Customer.cs" />
+    <Compile Include="DomainBase\Bill.cs" />
+    <Compile Include="DomainBase\Customer.cs" />
     <Compile Include="Domain\Individual.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderDetail.cs" />
