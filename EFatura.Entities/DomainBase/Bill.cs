@@ -9,5 +9,6 @@ namespace EFatura.Entities.OtherEntities
 {
     public class Bill : BaseEntity
     {
+
     }
 }

@@ -111,5 +111,12 @@
             Company
         }
 
+        public enum CommercialScenarioStatus //Ticari Senaryo Durumu
+        {
+            Acceptance = 1, //1 (Kabul)
+            Rejection,      //2 (Ret)
+            Return          //3 (İade)
+        }
+
     }
 }
