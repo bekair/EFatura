@@ -160,6 +160,15 @@
     <Compile Include="EntityAccessors\OrderManager.cs" />
     <Compile Include="EntityAccessors\OrderDetailManager.cs" />
     <Compile Include="EntityAccessors\ProductManager.cs" />
+    <Compile Include="Migrations\20170830203536_init.cs" />
+    <Compile Include="Migrations\20170830203536_init.designer.cs">
+      <DependentUpon>20170830203536_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170830212530_ScenarioTypeSetFieldName.cs" />
+    <Compile Include="Migrations\20170830212530_ScenarioTypeSetFieldName.designer.cs">
+      <DependentUpon>20170830212530_ScenarioTypeSetFieldName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\EFaturaDbContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

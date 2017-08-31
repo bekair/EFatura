@@ -107,15 +107,21 @@
 
         public enum CustomerType
         {
-            Inividual = 1,
+            Individual = 1,
             Company
         }
 
         public enum CommercialScenarioStatus //Ticari Senaryo Durumu
         {
-            Acceptance = 1, //1 (Kabul)
-            Rejection,      //2 (Ret)
-            Return          //3 (İade)
+            Rejection = 0, //0 (Kabul)
+            Acception,     //1 (Ret)
+            Return         //2 (İade)
+        }
+
+        public enum ScenarioType
+        {
+            Basic = 1,
+            Commercial
         }
 
     }

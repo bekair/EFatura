@@ -1,5 +1,4 @@
 ﻿using EFatura.Entities.OtherEntities;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFatura.Entities.Domain
@@ -10,10 +9,6 @@ namespace EFatura.Entities.Domain
         [Column("INDIVIDUAL_BILL_ID")]
         public override long? ID { get => base.ID; set => base.ID = value; }
 
-        [Column("ORDER_ID_FOREIGN")]
-        public long? OrderID { get; set; }
 
-        //Navigation Property
-        public IEnumerable<Order> Order { get; set; }
     }
 }
