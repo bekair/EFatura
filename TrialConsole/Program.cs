@@ -12,7 +12,7 @@ using EFatura.DataAccess.EntityAccessors;
 using static EFatura.Core.EnumBase.EnumsArea;
 using Microsoft.EntityFrameworkCore;
 
-namespace ConsoleApp1
+namespace TrialConsole
 {
     class Program
     {
@@ -143,7 +143,7 @@ namespace ConsoleApp1
             //    TaxIdentificationNo = "2234959167",
             //    IsWorking = WorkingStatus.NotWorking,
             //};
-            //individualDao.AddMore(individual1,individual2);
+            //individualDao.AddMore(individual1, individual2);
 
             //Order order1 = new Order
             //{
@@ -235,6 +235,7 @@ namespace ConsoleApp1
             ////ID = 2 olan birinin top category'sini getirmek
             //Category topCateg = _db.Categories.FirstOrDefault(q => q.ID ==
             //                                   (_db.Categories.FirstOrDefault(a => a.ID == 2).TopCategoryID));
+
             DateTime d = DateTime.Today;
             Console.WriteLine(d);
 

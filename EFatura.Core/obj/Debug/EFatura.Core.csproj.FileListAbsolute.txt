@@ -59,6 +59,7 @@ C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\bin\Debug\Remotion.Linq.xml
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\bin\Debug\System.Collections.Immutable.xml
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\bin\Debug\System.Interactive.Async.xml
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\obj\Debug\EFatura.Core.csprojResolveAssemblyReference.cache
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\obj\Debug\EFatura.Core.csproj.CoreCompileInputs.cache
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\obj\Debug\EFatura.Core.dll
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Core\obj\Debug\EFatura.Core.pdb
