@@ -36,6 +36,11 @@
             memory pressure triggered cleanup. The default is <see cref="F:Microsoft.Extensions.Caching.Memory.CacheItemPriority.Normal"/>.
             </summary>
         </member>
+        <member name="P:Microsoft.Extensions.Caching.Memory.CacheEntry.Size">
+            <summary>
+            Gets or sets the size of the cache entry value.
+            </summary>
+        </member>
         <member name="T:Microsoft.Extensions.Caching.Memory.MemoryCache">
             <summary>
             An implementation of <see cref="T:Microsoft.Extensions.Caching.Memory.IMemoryCache"/> using a dictionary to
@@ -67,25 +72,36 @@
         <member name="M:Microsoft.Extensions.Caching.Memory.MemoryCache.Remove(System.Object)">
             <inheritdoc />
         </member>
-        <member name="M:Microsoft.Extensions.Caching.Memory.MemoryCache.DoMemoryPreassureCollection(System.Object)">
-            This is called after a Gen2 garbage collection. We assume this means there was memory pressure.
-            Remove at least 10% of the total entries (or estimated memory?).
-        </member>
         <member name="M:Microsoft.Extensions.Caching.Memory.MemoryCache.Compact(System.Double)">
             Remove at least the given percentage (0.10 for 10%) of the total entries (or estimated memory?), according to the following policy:
             1. Remove all expired items.
             2. Bucket by CacheItemPriority.
-            ?. Least recently used objects.
+            3. Least recently used objects.
             ?. Items with the soonest absolute expiration.
             ?. Items with the soonest sliding expiration.
             ?. Larger objects - estimated by object graph size, inaccurate.
         </member>
-        <member name="M:Microsoft.Extensions.Caching.Memory.MemoryCache.ExpirePriorityBucket(System.Int32,System.Collections.Generic.List{Microsoft.Extensions.Caching.Memory.CacheEntry},System.Collections.Generic.List{Microsoft.Extensions.Caching.Memory.CacheEntry})">
+        <member name="M:Microsoft.Extensions.Caching.Memory.MemoryCache.ExpirePriorityBucket(System.Int64@,System.Int64,System.Func{Microsoft.Extensions.Caching.Memory.CacheEntry,System.Int64},System.Collections.Generic.List{Microsoft.Extensions.Caching.Memory.CacheEntry},System.Collections.Generic.List{Microsoft.Extensions.Caching.Memory.CacheEntry})">
             Policy:
-            ?. Least recently used objects.
+            1. Least recently used objects.
             ?. Items with the soonest absolute expiration.
             ?. Items with the soonest sliding expiration.
             ?. Larger objects - estimated by object graph size, inaccurate.
+        </member>
+        <member name="P:Microsoft.Extensions.Caching.Memory.MemoryCacheOptions.CompactOnMemoryPressure">
+            <summary>
+            Gets or sets the minimum length of time between successive scans for expired items.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.Caching.Memory.MemoryCacheOptions.SizeLimit">
+            <summary>
+            Gets or sets the maximum size of the cache.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.Caching.Memory.MemoryCacheOptions.CompactionPercentage">
+            <summary>
+            Gets or sets the amount to compact the cache by when the maximum size is exceeded.
+            </summary>
         </member>
         <member name="T:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions">
             <summary>
@@ -127,12 +143,24 @@
             <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to.</param>
             <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> so that additional calls can be chained.</returns>
         </member>
-        <member name="T:Microsoft.Extensions.Internal.GcNotification">
+        <member name="M:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Microsoft.Extensions.Caching.Memory.MemoryDistributedCacheOptions})">
             <summary>
-            Registers a callback that fires each time a Gen2 garbage collection occurs,
-            presumably due to memory pressure.
-            For this to work no components can have a reference to the instance.
+            Adds a default implementation of <see cref="T:Microsoft.Extensions.Caching.Distributed.IDistributedCache"/> that stores items in memory
+            to the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />. Frameworks that require a distributed cache to work
+            can safely add this dependency as part of their dependency list to ensure that there is at least
+            one implementation available.
             </summary>
+            <remarks>
+            <see cref="M:Microsoft.Extensions.DependencyInjection.MemoryCacheServiceCollectionExtensions.AddDistributedMemoryCache(Microsoft.Extensions.DependencyInjection.IServiceCollection)"/> should only be used in single
+            server scenarios as this cache stores items in memory and doesn't expand across multiple machines.
+            For those scenarios it is recommended to use a proper distributed cache that can expand across
+            multiple machines.
+            </remarks>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /> to add services to.</param>
+            <param name="setupAction">
+            The <see cref="T:System.Action`1"/> to configure the provided <see cref="T:Microsoft.Extensions.Caching.Memory.MemoryDistributedCacheOptions"/>.
+            </param>
+            <returns>The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> so that additional calls can be chained.</returns>
         </member>
     </members>
 </doc>

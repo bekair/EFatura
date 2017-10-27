@@ -65,3 +65,8 @@ C:\Users\Beko\Source\Repos\EFatura\EFatura.Entities\obj\Debug\EFatura.Entities.c
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Entities\obj\Debug\EFatura.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Entities\obj\Debug\EFatura.Entities.dll
 C:\Users\Beko\Source\Repos\EFatura\EFatura.Entities\obj\Debug\EFatura.Entities.pdb
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Entities\bin\Debug\netstandard.dll
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Entities\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Entities\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Entities\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\bekir.baykal\Documents\Visual Studio 2017\Projects\Real Projects\EFatura.Entities\obj\Debug\EFatura.Entities.csproj.CoreCompileInputs.cache

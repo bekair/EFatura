@@ -52,8 +52,11 @@ namespace EFatura.Entities.Domain
         //Always will be 'Company'
         [Column("CUSTOMER_TYPE")]
         [Required]
-        public override CustomerType CustomerType { get => base.CustomerType;
-                                                    set => base.CustomerType = CustomerType.Company; }
+        public override CustomerType CustomerType
+        {
+            get => base.CustomerType;
+            set => base.CustomerType = CustomerType.Company;
+        }
 
     }
 }

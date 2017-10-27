@@ -1,5 +1,6 @@
 ﻿using EFatura.Core.EntityBase;
 using EFatura.Entities.Domain;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static EFatura.Core.EnumBase.EnumsArea;
@@ -24,5 +25,9 @@ namespace EFatura.Entities.OtherEntities
 
         [Column("CUSTOMER_TYPE")]
         public virtual CustomerType CustomerType { get; set; }
+
+        [Column("REGISTRATION_DATE")]
+        [Required]
+        public string RegistrationDate { get; set; } = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
     }
 }

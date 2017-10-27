@@ -236,7 +236,7 @@ namespace TrialConsole
             //Category topCateg = _db.Categories.FirstOrDefault(q => q.ID ==
             //                                   (_db.Categories.FirstOrDefault(a => a.ID == 2).TopCategoryID));
 
-            DateTime d = DateTime.Today;
+            String d = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
             Console.WriteLine(d);
 
 

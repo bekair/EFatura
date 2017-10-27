@@ -1,4 +1,5 @@
 ﻿using EFatura.Core.EntityBase;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -40,6 +41,10 @@ namespace EFatura.Entities.Domain
         [Column("STOCK_AMOUNT")]
         [Required]
         public int StockAmount { get; set; }
+
+        [Column("CREATION_DATE")]
+        [Required]
+        public string CreationDate { get; set; } = DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
 
     }
 }
